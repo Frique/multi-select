@@ -1,3 +1,5 @@
 # jquery.multi-select.js
 
-Usage and Demos [http://loudev.com](http://loudev.com "jquery.multi-select.js")
+Frique-master is the original master branch with all Frique contributions merged:
+- ie7-support
+- selection-limit
