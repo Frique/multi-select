@@ -213,6 +213,18 @@
             e.stopPropagation();
             that.switchList($list);
             return;
+          case 9:
+            if(that.$element.is('[tabindex]')){
+              e.preventDefault();
+              var tabindex = parseInt(that.$element.attr('tabindex'), 10);
+              tabindex = (e.shiftKey) ? tabindex-1 : tabindex+1;
+              $('[tabindex="'+(tabindex)+'"]').focus();
+              return;
+            }else{
+              if(e.shiftKey){
+                that.$element.trigger('focus');
+              }
+            }
         }
       });
     },
