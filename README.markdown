@@ -6,3 +6,4 @@ Frique-master is the original master branch with all Frique contributions merged
 - keyboard-nav-including-groups
 - shift-tab
 - enterkey_option
+- unique-ids
