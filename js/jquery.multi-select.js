@@ -203,18 +203,6 @@
             e.stopPropagation();
             that.moveHighlight($(this), (e.which === 38) ? -1 : 1);
             return;
-          case 32:
-            e.preventDefault();
-            e.stopPropagation();
-            that.selectHighlighted($list);
-            return;
-          case 13:
-            if(that.options.enterKeySelect){
-              e.preventDefault();
-              e.stopPropagation();
-              that.selectHighlighted($list);
-            }
-            return;
           case 37:
           case 39:
             e.preventDefault();
@@ -233,6 +221,12 @@
                 that.$element.trigger('focus');
               }
             }
+        }
+        if($.inArray(e.which, that.options.keySelect) > -1){
+          e.preventDefault();
+          e.stopPropagation();
+          that.selectHighlighted($list);
+          return;
         }
       });
     },
@@ -542,7 +536,7 @@
   };
 
   $.fn.multiSelect.defaults = {
-    enterKeySelect: false,
+    keySelect: [32],
     selectableOptgroup: false,
     disabledClass : 'disabled',
     dblClick : false,
